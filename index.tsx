@@ -5,12 +5,12 @@ import ReactDOM from 'react-dom/client';
 // The images are assumed to be in the same directory as the application.
 // The file names are based on the files provided in the prompt.
 const slides = [
-  '/images/1.jpeg',
-  '/images/2.jpeg',
-  '/images/3.jpeg',
-  '/images/4.jpeg',
-  '/images/5.jpeg',
-  '/images/6.jpeg',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/1.jpeg?raw=true',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/2.jpeg?raw=true',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/3.jpeg?raw=true',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/4.jpeg?raw=true',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/5.jpeg?raw=true',
+  'https://github.com/mwanjeronie/pitch-deck-viewer/blob/main/images/6.jpeg?raw=true',
 ];
 
 function App() {
@@ -60,6 +60,7 @@ function App() {
           src={slides[currentSlide]}
           alt={`Slide ${currentSlide + 1}`}
           className="slide-image"
+          onError={e => (e.currentTarget.src = 'https://via.placeholder.com/1920x1080?text=Image+not+found')}
         />
         <button onClick={goToPrevious} className="nav-button prev" aria-label="Previous slide">&#8249;</button>
         <button onClick={goToNext} className="nav-button next" aria-label="Next slide">&#8250;</button>

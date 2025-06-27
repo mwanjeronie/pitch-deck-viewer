@@ -1,4 +1,4 @@
-body, #root {
+body, html, #root {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -38,11 +38,8 @@ body, #root {
 .slide-image {
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
+  object-fit: contain; /* Use 'contain' for full image, 'cover' for always fill */
   background: #000;
-  transition: none;
   display: block;
 }
 
